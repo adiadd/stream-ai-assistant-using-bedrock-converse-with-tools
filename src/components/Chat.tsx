@@ -1,5 +1,5 @@
 import { ToolInvocation } from "ai";
-import { Message, useChat } from "ai/react";
+import { Message, useChat } from "@ai-sdk/react";
 import { fetchAuthSession } from "aws-amplify/auth";
 import { CornerDownLeft, LoaderCircle, Paperclip } from "lucide-react";
 import { ChangeEvent, useState } from "react";
@@ -32,7 +32,6 @@ export function Chat({ settings }: Props) {
     isLoading,
   } = useChat({
     api: chatUrl + endpoint,
-    maxToolRoundtrips: 5,
     body: { settings },
 
     // run client-side tools that are automatically executed

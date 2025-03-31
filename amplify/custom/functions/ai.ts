@@ -18,9 +18,7 @@ const settingsSchema = z.object({
 });
 
 const bedrock = createAmazonBedrock({
-  bedrockOptions: {
-    region: process.env.AWS_REGION,
-  },
+  region: process.env.AWS_REGION,
 });
 
 /**
